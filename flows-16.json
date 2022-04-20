@@ -11,7 +11,7 @@
         "type": "ubidots_out",
         "z": "cd6c7a263614b184",
         "name": "My Ubidots Account",
-        "token": "BBFF-3562kP2uUTM7WfXn881rI4NGkVOoL8",
+        "token": "",
         "label_device": "",
         "device_label": "",
         "tier": "business",
