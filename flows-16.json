@@ -1,0 +1,75 @@
+[
+    {
+        "id": "cd6c7a263614b184",
+        "type": "tab",
+        "label": "Ubidots",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "82f4126be5931d3c",
+        "type": "ubidots_out",
+        "z": "cd6c7a263614b184",
+        "name": "My Ubidots Account",
+        "token": "BBFF-3562kP2uUTM7WfXn881rI4NGkVOoL8",
+        "label_device": "",
+        "device_label": "",
+        "tier": "business",
+        "tls_checkbox": false,
+        "x": 700,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "3b4f20e6b76dcd1a",
+        "type": "function",
+        "z": "cd6c7a263614b184",
+        "name": "",
+        "func": "var newObj = {};\nnewObj.payload = msg.payload;\n\nnewObj.payload.ubidotsDeviceLabel = msg.payload.addr;\n\nfor(var key in msg.payload.sensor_data){\n    newObj.payload[key] = msg.payload.sensor_data[key];\n}\n\ndelete newObj.sensor_data;\n\nreturn newObj;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 160,
+        "wires": [
+            [
+                "82f4126be5931d3c",
+                "dbb0dbb24f06559b"
+            ]
+        ]
+    },
+    {
+        "id": "dbb0dbb24f06559b",
+        "type": "debug",
+        "z": "cd6c7a263614b184",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e3b3da564666ec4c",
+        "type": "ncd-gateway-node",
+        "z": "cd6c7a263614b184",
+        "name": "",
+        "connection": "",
+        "unknown_devices": 0,
+        "outputs": 1,
+        "x": 250,
+        "y": 160,
+        "wires": [
+            [
+                "3b4f20e6b76dcd1a"
+            ]
+        ]
+    }
+]
