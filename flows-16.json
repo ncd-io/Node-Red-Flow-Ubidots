@@ -3,22 +3,8 @@
         "id": "cd6c7a263614b184",
         "type": "tab",
         "label": "Ubidots",
-        "disabled": true,
+        "disabled": false,
         "info": ""
-    },
-    {
-        "id": "82f4126be5931d3c",
-        "type": "ubidots_out",
-        "z": "cd6c7a263614b184",
-        "name": "My Ubidots Account",
-        "token": "",
-        "label_device": "",
-        "device_label": "",
-        "tier": "business",
-        "tls_checkbox": false,
-        "x": 700,
-        "y": 160,
-        "wires": []
     },
     {
         "id": "3b4f20e6b76dcd1a",
@@ -61,7 +47,7 @@
         "type": "ncd-gateway-node",
         "z": "cd6c7a263614b184",
         "name": "",
-        "connection": "",
+        "connection": "57f4b0572241b42e",
         "unknown_devices": 0,
         "outputs": 1,
         "x": 250,
@@ -71,5 +57,31 @@
                 "3b4f20e6b76dcd1a"
             ]
         ]
+    },
+    {
+        "id": "82f4126be5931d3c",
+        "type": "ubidots_out",
+        "z": "cd6c7a263614b184",
+        "name": "My Ubidots Account",
+        "token": "",
+        "label_device": "",
+        "device_label": "",
+        "tier": "business",
+        "tls_checkbox": false,
+        "x": 700,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "57f4b0572241b42e",
+        "type": "ncd-gateway-config",
+        "name": "Zigmo",
+        "comm_type": "serial",
+        "ip_address": "",
+        "tcp_port": "2101",
+        "port": "/dev/tty.usbserial-AC3VPU0N",
+        "baudRate": "115200",
+        "pan_id": "7fff",
+        "rssi": false
     }
 ]
